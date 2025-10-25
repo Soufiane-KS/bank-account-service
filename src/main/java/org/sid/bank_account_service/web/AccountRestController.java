@@ -3,6 +3,7 @@ package org.sid.bank_account_service.web;
 import org.sid.bank_account_service.dto.BankAccountRequestDTO;
 import org.sid.bank_account_service.dto.BankAccountResponseDTO;
 import org.sid.bank_account_service.entities.BankAccount;
+import org.sid.bank_account_service.mappers.AccountMapper;
 import org.sid.bank_account_service.repositories.BankAccountRepository;
 import org.sid.bank_account_service.service.AccountService;
 import org.springframework.web.bind.annotation.*;
@@ -16,10 +17,12 @@ import java.util.UUID;
 public class AccountRestController {
     private BankAccountRepository bankAccountRepository;
     private AccountService accountService;
+    private AccountMapper accountMapper;
 
-    public AccountRestController(BankAccountRepository bankAccountRepository, AccountService accountService) {
+    public AccountRestController(BankAccountRepository bankAccountRepository, AccountService accountService, AccountMapper accountMapper) {
         this.bankAccountRepository = bankAccountRepository;
         this.accountService = accountService;
+        this.accountMapper = accountMapper;
     }
     @GetMapping("/bankAccounts")
     public List<BankAccount> BankAccounts(){
