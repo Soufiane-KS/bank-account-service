@@ -27,7 +27,7 @@ public class AccountRestController {
     public BankAccount save(@RequestBody BankAccount bankAccount){
         return bankAccountRepository.save(bankAccount);
     }
-    @PutMapping("/bankAccounts/|{id}")
+    @PutMapping("/bankAccounts/{id}")
     public BankAccount update(@PathVariable String id, @RequestBody BankAccount bankAccount){
         BankAccount account=bankAccountRepository.findById(id).orElseThrow();
         if(bankAccount.getBalance()!=null) account.setBalance(bankAccount.getBalance());
@@ -37,7 +37,7 @@ public class AccountRestController {
         return bankAccountRepository.save(account);
     }
 
-    @GetMapping("/bankAccounts/{id}")
+    @DeleteMapping("/bankAccounts/{id}")
     public void deleteAccount(@PathVariable String id){
         bankAccountRepository.deleteById(id);
     }
