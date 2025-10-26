@@ -8,13 +8,18 @@ type Mutation{
     updateAccount(id : String, bankAccount : BankAccountDTO) : BankAccount,
     deleteAccount(id : String) : String
 }
-
+type Customer{
+    id : ID,
+    name : String,
+    bankAccount : [BankAccount]
+}
 type BankAccount{
     id : String,
     createdAt : Float,
     balance : Float,
     currency : String,
     type : String
+    customer : Customer
 }
 
 input BankAccountDTO{
