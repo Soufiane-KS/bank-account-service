@@ -6,5 +6,7 @@ import org.sid.bank_account_service.entities.BankAccount;
 import org.sid.bank_account_service.enums.AccountType;
 
 public interface AccountService {
-    public BankAccountResponseDTO addAccount(BankAccountRequestDTO bankAccountDTO);
+    BankAccountResponseDTO addAccount(BankAccountRequestDTO bankAccountDTO);
+
+    BankAccountResponseDTO updateAccount(String id, BankAccountRequestDTO bankAccountDTO);
 }
