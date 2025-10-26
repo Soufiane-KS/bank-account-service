@@ -437,6 +437,5 @@ For questions or issues related to this project, please refer to:
 
 ---
 
-**Developed by**: [Your Name]  
-**Course**: Microservices Architecture  
-**Date**: [Current Date]
+**Developed by**: KOUSTA Soufiane  
+**class**: CCN3
